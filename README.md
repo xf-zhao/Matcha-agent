@@ -20,6 +20,9 @@ ViLD reuqires many packages that might conflict with CoppeliaSim etc. So in this
 
 
 The codes start from `main.py`.
+```python
+python main.py --engine text-davinci-003 --sound_use_adjective --headless --temperature 0 --use_wandb
+```
 
 
 Please cite
