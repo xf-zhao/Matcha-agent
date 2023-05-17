@@ -3,6 +3,7 @@
 
 This is the implementation of paper [Chat with the Environment: Interactive Multimodal Perception using Large Language Models](https://arxiv.org/abs/2303.08268), or Matcha (multimodal environment chatting agent) for short.
 
+Project page: https://matcha-model.github.io/
 
 This implementation is based on [RLBench](https://github.com/stepjam/RLBench) (in [CoppeliaSim](https://www.coppeliarobotics.com/) simulator) but with NICOL robot from our own lab. Because the full robot is not publically available, so in this code we open-source all the codes except the robot's configurations.
 
