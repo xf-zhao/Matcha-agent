@@ -6,6 +6,8 @@ Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha 
 ![](https://img.shields.io/badge/License-Apache_2.0-green)
 ![](https://img.shields.io/badge/Status-Full_Release-blue)
 ![](https://img.shields.io/badge/version-v1.0-blue)
+![](https://img.shields.io/badge/Paper-Arxiv-blue)
+![](https://img.shields.io/badge/Conference-IROS'23-blue)
 
 ---
 </div>
@@ -14,6 +16,7 @@ Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha 
 - <span style="color:red"> [2023-09-29]</span> The **full** codes,including the [NICOL](https://arxiv.org/abs/2305.08528) robot URDF and scenes, are released! Codes are re-organised and tested with `Vicuna-13b` model.
 - [2023-07-01] We open-source codes except the robot's configurations (because the NICOL robot is not publically available at this time). 
 
+## Demo
 
 ## ⚙️ Install Dependencies
 
@@ -109,3 +112,21 @@ Optional parameters:
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${YOUR_USER_NAME}/anaconda3/envs/nicol/lib
     ```
     see also: https://github.com/BVLC/caffe/issues/4953 
+
+
+<!-- ## 👥 Contributors
+<a href="https://github.com/xf-zhao/Matcha-agent/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=xf-zhao/Matcha-agent" />
+</a> -->
+
+## 🔗 Citation
+```text
+@misc{zhao2023chat,
+      title={Chat with the Environment: Interactive Multimodal Perception Using Large Language Models}, 
+      author={Xufeng Zhao and Mengdi Li and Cornelius Weber and Muhammad Burhan Hafez and Stefan Wermter},
+      year={2023},
+      eprint={2303.08268},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
