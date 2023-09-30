@@ -1,7 +1,5 @@
 # ViLD Server 
 
-Currently configured on `wtmgws10`, under path `/data/zhao_pub/ViLD` (group access permission).
-
 ## Install 
 
 ### Install required packages

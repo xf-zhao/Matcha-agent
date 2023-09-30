@@ -1,43 +1,111 @@
 <div align="center">
-<img src="https://matcha-agent.github.io/img/matcha_background.png" style="width:800px;"/>
+<img src="https://matcha-agent.github.io/img/matcha_background_small.png" style="width:800px;"/>
 
-Official Implementation of <b>Matcha Agent</b>
+Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha Agent</b> </a>
 
-![](https://img.shields.io/badge/License-Apache-green) ![](https://img.shields.io/badge/Status-Full_Release-blue) ![](https://img.shields.io/badge/version-v1.0-blue)
+![](https://img.shields.io/badge/License-Apache_2.0-green)
+![](https://img.shields.io/badge/Status-Full_Release-blue)
+![](https://img.shields.io/badge/version-v1.0-blue)
 
 ---
 </div>
 
-### 🔔 News
-- [2023-09-29] The **full** codes,including the NICOL robot URDF and scenes, are released! Codes are re-organised and tested with `Vicuna-13b` model.
-- [2023-07-01] We open-source codes except the robot's configurations (because the NICOL robot is not publically available now). 
+## 🔔 News
+- <span style="color:red"> [2023-09-29]</span> The **full** codes,including the [NICOL](https://arxiv.org/abs/2305.08528) robot URDF and scenes, are released! Codes are re-organised and tested with `Vicuna-13b` model.
+- [2023-07-01] We open-source codes except the robot's configurations (because the NICOL robot is not publically available at this time). 
 
 
-# Install
-## Install RLBench and NICOL Robot
-[NICOL](./NICOL/README.md)
+## ⚙️ Install Dependencies
 
-## Install ViLD
-[ViLD](./ViLD/README.md)
+### 🕹 Robotic
 
-## Install Sound Module
-[Sound Module](./Sound/README.md)
+The experimental task is designed on top of [RLBench](https://github.com/stepjam/RLBench), but with a replacement of our own [NICOL](https://arxiv.org/abs/2305.08528) robot, a desktop-based humanoid robot. 
 
+#### Install [RLBench](https://github.com/stepjam/RLBench) and [NICOL](./NICOL/README.md) Robot
 
-# Run
+```bash
+git clone git@github.com:xf-zhao/Matcha-agent.git
+cd NICOL
+pip install -r requiremetns.txt
+```
+
+#### Run NICOL demo with [RLBench](https://github.com/stepjam/RLBench) tasks
+```bash
+python demo.py
+```
+
+### 🌄️ Vision
+
+The visual detection is done with [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild), an open-vocabulary detection model. Despite of the simplicity of the vision in our demo, we use [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) with a consideration of better generalization.
+
+#### Install [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) requirements
+
+Since the library dependencies of [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) may highly conflict with other packages installed, we encourage to install [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) model within an separated environment and launch it as a `http` server.
+
+```bash
+conda create -n vild python=3.9
+conda activate vild
+pip install -r requirements.txt
+# Download weights
+gsutil cp -r gs://cloud-tpu-checkpoints/detection/projects/vild/colab/image_path_v2 ./
+```
+
+#### Launch [Flask](https://flask.palletsprojects.com/en/2.3.x/) server for [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild)
+```bash
+sh launch_vild_server.sh
+```
+The [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) server will be ready under: `0.0.0.0:8848/api/vild`
+
+### 🔉 Sound
+
+The sound module requires [PyTorch](https://pytorch.org/), [TorchAudio](https://pytorch.org/audio/stable/index.html) and other sound related packages that may conflict with the robotic and vision configurations. Like for vision module, we also deploy this module within an independent environment.
+
+#### Install sound module requirements
+```bash
+conda create -n sound python=3.9
+conda activate sound
+pip install -r requirements.txt
+```
+#### Offline Neural Network Training for Sound Classification. 
+We train a sound classification neural network.
+
+```bash
+python train.py
+```
+This training process includes
+- Load the auditory `train/test` dataset (`.wav`)
+- Train a neuralnetwork with augmented `train` dataset
+- Evaluate on the `test` dataset
+- Save the best performance model weights (`best_model.ckpt`), which will be loaded for the *sound server* as API.
+See also [this blog](https://music-classification.github.io/tutorial/part3_supervised/tutorial.html) for reference.
+
+#### Launch sound module as a server
+```bash
+sh launch_sound_server.sh
+```
+The sound server will be ready under: `0.0.0.0:8849/api/sound`
+
+### 🦙 Large Language Models (LLMs) Configuration
+
+In the original Matcha-agent paper, we use openai API `text-davinci-003` and `text-ada-001` as the backend LLMs. Nowadays, there are many open-sourced LLMs available. In the version `v1.0` release, we use `Vicuna-13b` model followed with [this FastChat doc](https://github.com/lm-sys/FastChat/blob/main/docs/openai_api.md).
+
+*Note that the LLM is worked in a **completions** mode instead of **chat completions** mode, i.e. no role-plays since we manually introduce roles in the prompts.*
+
+## 🍵~🤖 Run Matcha-agent
 ```bash
 python main.py
 ```
 
 Optional parameters:
 - `engine`: The backend LLM to run, such as [`text-davinci-003`, `Vicuna-13b`, `gpt-3.5-turbo`, ...]
+...
 
 
-# Error Debuging
-If error `ImportError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.29' not found.`
-see also: https://github.com/BVLC/caffe/issues/4953 
+## 🐞 Error Debuging
+- If an error `ImportError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.29' not found.` occurs:
 
-```bash
-conda install libgcc
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${YOUR_USER_NAME}/anaconda3/envs/nicol/lib
-```
+    ```bash
+    conda install libgcc
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${YOUR_USER_NAME}/anaconda3/envs/nicol/lib
+    ```
+    see also: https://github.com/BVLC/caffe/issues/4953 

@@ -1,7 +1,5 @@
 # Introduction to NICOL
 
-
-
 # Install
 
 ```bash
