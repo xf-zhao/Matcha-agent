@@ -1,0 +1,5 @@
+playsound
+openai
+imageio
+pyyaml
+loguru

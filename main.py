@@ -1,8 +1,10 @@
 from collections import defaultdict
-from knock_env import NICOLEnv, ChatEnvironment, LLM, Assistant, Agent, FakeLLM
+from managers import ChatEnvironment, LLM, Assistant, Agent, FakeLLM
+from NICOL.nicol_env import NICOLKnockingEnv
 import argparse
 import wandb
 import numpy as np
+import yaml
 
 
 def log(prompt):
@@ -11,10 +13,6 @@ def log(prompt):
     print("=" * 80)
     return
 
-
-# os.environ["DISPLAY"]=":1.0"
-# os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-# os.environ["CUDA_VISIBLE_DEVICES"]="7"
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -27,7 +25,7 @@ parser.add_argument(
     # "-g", "--engine", default="text-davinci-003", help="OpenAI LLM engines."
     "-g",
     "--engine",
-    default="text-ada-001",
+    default="Vicuna-13b",
     help="OpenAI LLM engines."
     # 'text-davinci-003', 'text-curie-001', 'text-babbage-001', "text-ada-001"
 )
@@ -95,8 +93,21 @@ parser.add_argument(
     default=-1,
     help="Seed used for randomizations.",
 )
+parser.add_argument(
+    "--prompt_path",
+    default="./prompts.txt",
+    help="Few-shot prompts for in-context learning.",
+)
 
 args = parser.parse_args()
+with open("config.yml", "r") as f:
+    default_configs = yaml.safe_load(f)
+
+for k, v in default_configs.items():
+    setattr(args, k, v)
+args.openai_api_base = args.engines[args.engine]["openai_api_base"]
+args.openai_api_key = args.engines[args.engine]["openai_api_key"]
+
 print(args)
 
 run_name = (
@@ -106,7 +117,7 @@ args.use_wandb and wandb.init(project="chatenv", config=args, name=run_name)
 
 
 environment = ChatEnvironment(
-    env_cls=NICOLEnv,
+    env_cls=NICOLKnockingEnv,
     mode=args.mode,
     headless=args.headless,
     debug=args.debug,
@@ -115,9 +126,10 @@ environment = ChatEnvironment(
 if args.fake_llm:
     LLM = FakeLLM
 llm = LLM(
-    openai_api_key_path="./openai_api_key.txt",
-    prompt_path="./prompts.txt",
     engine=args.engine,
+    openai_api_base=args.openai_api_base,
+    openai_api_key=args.openai_api_key,
+    prompt_path=args.prompt_path,
     max_tokens=int(args.max_tokens),
     temperature=int(args.temperature),
 )

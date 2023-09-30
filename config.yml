@@ -1,0 +1,7 @@
+engines:
+  Vicuna-13b:
+    openai_api_base: http://0.0.0.0:8000/v1
+    openai_api_key: EMPTY
+  gpt-3.5-turbo:
+    openai_api_base: ""
+    openai_api_key: YOUR_OPENAI_API_KEY

@@ -1,0 +1,6 @@
+ViLD/image_path_v2/
+temp/
+*.ckpt
+*.pyc
+*.ttt
+.DS*

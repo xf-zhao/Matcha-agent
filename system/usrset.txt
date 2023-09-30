@@ -1,0 +1,184 @@
+// Debugging
+// =================================================
+alwaysShowConsole = false
+verbosity = default // to override console verbosity setting, use any of: default (do not override), none, errors, warnings, loadinfos, scripterrors, scriptwarnings, msgs, infos, debug, trace, tracelua or traceall
+statusbarVerbosity = default // to override statusbar verbosity setting, use any of: default (do not override), none, errors, warnings, loadinfos, scripterrors, scriptwarnings, msgs, infos, debug, trace, tracelua or traceall
+logFilter =  // leave empty for no filter. Filter format: txta1&txta2&...&txtaN|txtb1&txtb2&...&txtbN|...
+dialogVerbosity = default // to override dialog verbosity setting, use any of: default (do not override), none, errors, warnings, questions or infos
+undecoratedStatusbarMessages = false
+consoleMsgsToFile = false // if true, console messages are sent to debugLog.txt
+
+
+// Rendering
+// =================================================
+idleFps = 8
+desiredOpenGlMajor = -1 // recommended to keep -1.
+desiredOpenGlMinor = -1 // recommended to keep -1.
+offscreenContextType = -1 // recommended to keep -1 (-1=default, 0=Qt offscreen, 1=QGLWidget/QOpenGLWidget visible, 2=QGLWidget/QOpenGLWidget invisible).
+fboType = -1 // recommended to keep -1 (-1=default, 0=native, 1=QOpenGLFramebufferObject).
+forceFboViaExt = false // recommended to keep false.
+vboOperation = -1 // recommended to keep -1 (-1=default, 0=always off, 1=on when available).
+vboPersistenceInMs = 5000 // recommended to keep 5000.
+oglCompatibilityTweak1 = false // recommended to keep false since it causes small memory leaks.
+visionSensorsUseGuiThread_windowed = -1 // recommended to keep -1 (-1=default, 0=GUI when not otherwise possible, 1=always GUI).
+visionSensorsUseGuiThread_headless = -1 // recommended to keep -1 (-1=default, 0=GUI when not otherwise possible, 1=always GUI).
+useGlFinish = false // recommended to keep false. Graphic card dependent.
+useGlFinish_visionSensors = false // recommended to keep false. Graphic card dependent.
+vsync = 0 // recommended to keep at 0. Graphic card dependent.
+debugOpenGl = false
+stereoDist = 0 // 0=no stereo, otherwise the intra occular distance (0.0635 for the human eyes).
+highResDisplay = -1 // -1=none, 1=special, 2=enabled, 3=enable oglScaling and guiScaling below.
+oglScaling = 1 // 1=default. No effect if highResDisplay!=3 above.
+guiScaling = 1 // 1.0=default. No effect if highResDisplay!=3 above.
+noEdgesWhenMouseDownInCameraView = false // if true, rendering is faster during mouse/view interaction
+noTexturesWhenMouseDownInCameraView = false // if true, rendering is faster during mouse/view interaction
+noCustomUisWhenMouseDownInCameraView = true // if true, rendering is faster during mouse/view interaction
+hierarchyRefreshCnt = 3
+
+
+// Visual
+// =================================================
+initWindowSize = 0,0 // 0,0 for fullscreen
+darkMode = false
+renderingSurfaceVShift = 0
+renderingSurfaceVResize = 0
+displayWorldRef = true
+antialiasing = false
+displayBoundingBoxeWhenObjectSelected = true
+guiFontSize_Win = 13 // -1=default
+guiFontSize_Mac = -1 // -1=default
+guiFontSize_Linux = 13 // -1=default
+statusbarInitiallyVisible = true
+modelBrowserInitiallyVisible = true
+sceneHierarchyInitiallyVisible = true
+sceneHierarchyHiddenDuringSimulation = false
+scriptEditorFont =  // empty=default. e.g. "Courier", "Courier New", "Consolas", etc.
+scriptEditorBoldFont = false
+scriptEditorFontSize = -1 // -1=default.
+mainScriptColor_background = 205,195,195
+mainScriptColor_selection = 128,128,255
+mainScriptColor_comment = 0,140,0
+mainScriptColor_number = 220,0,220
+mainScriptColor_string = 255,255,0
+mainScriptColor_character = 255,255,0
+mainScriptColor_operator = 0,0,0
+mainScriptColor_preprocessor = 0,128,128
+mainScriptColor_identifier = 64,64,64
+mainScriptColor_word = 0,0,255
+mainScriptColor_word2 = 152,0,0
+mainScriptColor_word3 = 220,80,20
+mainScriptColor_word4 = 152,64,0
+childScriptColor_background = 205,205,205
+childScriptColor_selection = 128,128,255
+childScriptColor_comment = 0,140,0
+childScriptColor_number = 220,0,220
+childScriptColor_string = 255,255,0
+childScriptColor_character = 255,255,0
+childScriptColor_operator = 0,0,0
+childScriptColor_preprocessor = 0,128,128
+childScriptColor_identifier = 64,64,64
+childScriptColor_word = 0,0,255
+childScriptColor_word2 = 152,0,0
+childScriptColor_word3 = 220,80,20
+childScriptColor_word4 = 152,64,0
+customizationScriptColor_background = 180,180,180
+customizationScriptColor_selection = 128,128,255
+customizationScriptColor_comment = 0,120,0
+customizationScriptColor_number = 220,0,220
+customizationScriptColor_string = 255,255,0
+customizationScriptColor_character = 255,255,0
+customizationScriptColor_operator = 0,0,0
+customizationScriptColor_preprocessor = 0,128,128
+customizationScriptColor_identifier = 70,70,70
+customizationScriptColor_word = 0,0,255
+customizationScriptColor_word2 = 152,0,0
+customizationScriptColor_word3 = 220,80,20
+customizationScriptColor_word4 = 152,64,0
+
+
+// Directories
+// =================================================
+defaultDirectoryForScenes =  // absolute path, e.g. d:/myScenes (or leave empty for default path)
+defaultDirectoryForModels =  // absolute path, e.g. d:/myModels (or leave empty for default path)
+defaultDirectoryForImportExport =  // absolute path, e.g. d:/myCadFiles (or leave empty for default path)
+defaultDirectoryForMiscFiles =  // absolute path, e.g. d:/myMiscFiles (or leave empty for default path)
+
+
+// Serialization
+// =================================================
+autoSaveDelay = 2 // in minutes. 0 to disable.
+doNotWritePersistentData = false
+compressFiles = true
+saveApproxNormals = true
+packIndices = true
+fileDialogs = -1 // recommended to keep -1 (-1=default, 0=native dialogs, 1=Qt dialogs).
+bulletSerializationBuffer = 10000000
+
+
+// Undo/Redo
+// =================================================
+undoRedoEnabled = true
+undoRedoOnlyPartialWithCameras = true
+undoRedoLevelCount = 16
+undoRedoMaxBufferSize = 80000000
+timeInMsForUndoRedoTooLongWarning = 200
+
+
+// Messaging
+// =================================================
+doNotShowCrashRecoveryMessage = false
+doNotShowUpdateCheckMessage = false
+doNotShowProgressBars = false
+doNotShowAcknowledgmentMessages = false
+doNotShowVideoCompressionLibraryLoadError = false
+suppressStartupDialogs = false
+suppressXmlOverwriteMsg = false
+
+
+// Compatibility
+// =================================================
+middleMouseButtonSwitchesModes = false // has only an effect if navigationBackwardCompatibility is true.
+navigationBackwardCompatibility = false // recommended to keep false.
+colorAdjust_backCompatibility = 1 // recommended to keep 1.0
+specificGpuTweak = false
+useAlternateSerialPortRoutines = false
+disableOpenGlBasedCustomUi = false
+showOldDlgs = false
+enableOldRenderableBehaviour = false
+keepOldThreadedScripts = false
+enableOldMirrorObjects = false
+enableOldScriptTraversal = false
+threadedScriptsStoppingGraceTime = 0
+
+
+// Various
+// =================================================
+mouseWheelZoomFactor = 1
+dynamicActivityRange = 1000
+objectTranslationStepSize = 0.0250000004
+objectRotationStepSize = 5
+freeServerPortStart = 20000
+freeServerPortRange = 2000
+abortScriptExecutionButton = 3 // in seconds. Zero to disable.
+triCountInOBB = 8
+removeIdenticalVertices = true
+identicalVerticesTolerance = 9.99999975e-05
+removeIdenticalTriangles = true
+triangleWindingCheck = true
+runCustomizationScripts = true
+test1 = false // recommended to keep false.
+macChildDialogType = -1 // -1=default.
+additionalLuaPath =  // e.g. d:/myLuaRoutines
+additionalPythonPath =  // e.g. d:/myPythonRoutines
+defaultPython =  // e.g. c:/Python38/python.exe
+executeUnsafe = false // recommended to keep false.
+desktopRecordingIndex = 0
+desktopRecordingWidth = -1 // -1=default.
+externalScriptEditor = 
+xmlExportSplitSize = 0 // 0=generate a single file.
+xmlExportKnownFormats = true // true=if several files are generated, mesh and image files are saved under known formats.
+
+
+// License
+// =================================================
+license = 

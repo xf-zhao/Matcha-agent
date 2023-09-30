@@ -1,0 +1,20 @@
+ftfy
+regex 
+tqdm
+fvcore
+imageio==2.4.1
+imageio-ffmpeg==0.4.5
+gdown
+pybullet
+moviepy
+flax==0.5.3
+openai
+easydict
+git+https://github.com/openai/CLIP.git
+# ViLD pretrained model weights.
+gsutil
+flask
+opencv-python
+numpy==1.23.5
+torch==2.0.1	
+tensorflow==2.11.0

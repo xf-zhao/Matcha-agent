@@ -1,37 +1,43 @@
-# Implementation of Matcha model
+<div align="center">
+<img src="https://matcha-agent.github.io/img/matcha_background.png" style="width:800px;"/>
+
+Official Implementation of <b>Matcha Agent</b>
+
+![](https://img.shields.io/badge/License-Apache-green) ![](https://img.shields.io/badge/Status-Full_Release-blue) ![](https://img.shields.io/badge/version-v1.0-blue)
+
+---
+</div>
+
+### 🔔 News
+- [2023-09-29] The **full** codes,including the NICOL robot URDF and scenes, are released! Codes are re-organised and tested with `Vicuna-13b` model.
+- [2023-07-01] We open-source codes except the robot's configurations (because the NICOL robot is not publically available now). 
 
 
-This is the implementation of paper [Chat with the Environment: Interactive Multimodal Perception using Large Language Models](https://arxiv.org/abs/2303.08268), or Matcha (multimodal environment chatting agent) for short.
+# Install
+## Install RLBench and NICOL Robot
+[NICOL](./NICOL/README.md)
 
-Project page: https://matcha-model.github.io/
+## Install ViLD
+[ViLD](./ViLD/README.md)
 
-This implementation is based on [RLBench](https://github.com/stepjam/RLBench) (in [CoppeliaSim](https://www.coppeliarobotics.com/) simulator) but with NICOL robot from our own lab. Because the full robot is not publically available, so in this code we open-source all the codes except the robot's configurations.
-
-
-## Core elements are
-
-- [ViLD](https://arxiv.org/abs/2104.13921) detection model to detect objects for describing and manipulating
-- [OpenAI text-davinci-003 GPT model](https://openai.com/product) to generate planning decisions. Note that now there are options, e.g. GPT3.5 and GPT4, cheaper and better available now, which are not available on the paper sumission date.
-- Multimodal classification models trained with supervised learning
+## Install Sound Module
+[Sound Module](./Sound/README.md)
 
 
-## Install
-
-ViLD reuqires many packages that might conflict with CoppeliaSim etc. So in this implementation, the vision and audio perception module are implemented as a separated http service with [Flask](https://flask.palletsprojects.com/en/2.3.x/).
-
-
-The codes start from `main.py`.
-```python
-python main.py --engine text-davinci-003 --sound_use_adjective --headless --temperature 0 --use_wandb
+# Run
+```bash
+python main.py
 ```
 
+Optional parameters:
+- `engine`: The backend LLM to run, such as [`text-davinci-003`, `Vicuna-13b`, `gpt-3.5-turbo`, ...]
 
-Please cite
-```text
-@article{zhao2023chat,
-  title={Chat with the Environment: Interactive Multimodal Perception using Large Language Models},
-  author={Zhao, Xufeng and Li, Mengdi and Weber, Cornelius and Hafez, Muhammad Burhan and Wermter, Stefan},
-  journal={arXiv preprint arXiv:2303.08268},
-  year={2023}
-}
+
+# Error Debuging
+If error `ImportError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.29' not found.`
+see also: https://github.com/BVLC/caffe/issues/4953 
+
+```bash
+conda install libgcc
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${YOUR_USER_NAME}/anaconda3/envs/nicol/lib
 ```
