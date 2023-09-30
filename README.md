@@ -114,11 +114,6 @@ Optional parameters:
     see also: https://github.com/BVLC/caffe/issues/4953 
 
 
-<!-- ## 👥 Contributors
-<a href="https://github.com/xf-zhao/Matcha-agent/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=xf-zhao/Matcha-agent" />
-</a> -->
-
 ## 🔗 Citation
 ```text
 @misc{zhao2023chat,
@@ -130,3 +125,8 @@ Optional parameters:
       primaryClass={cs.RO}
 }
 ```
+
+<!-- ## 👥 Contributors
+<a href="https://github.com/xf-zhao/Matcha-agent/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=xf-zhao/Matcha-agent" />
+</a> -->
