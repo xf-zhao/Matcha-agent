@@ -17,12 +17,12 @@ Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha 
 
 ### Contents
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
-- [🎥 Demo Video](#-demo)
-- [⚙️ Install Dependencies](#-install-dependencies)
+- [🎥 Demo Video](#-demo-video)
+- [🔨 Install Dependencies](#-install-dependencies)
    * [🕹 Robotic](#-robotic)
       + [Install RLBench and NICOL Robot](#install-rlbench-and-nicol-robot)
       + [Run NICOL demo with RLBench tasks](#run-nicol-demo-with-rlbench-tasks)
-   * [🌄️ Vision](#-vision)
+   * [️🌇 Vision](#-vision)
       + [Install ViLD requirements](#install-vild-requirements)
       + [Launch Flask server for ViLD](#launch-flask-server-for-vild)
    * [🔉 Sound](#-sound)
@@ -45,7 +45,7 @@ Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha 
 - In [CoppeliaSim](https://www.coppeliarobotics.com/) simulator.
 - Please **turn on** your speaker to hear the sound!
 
-## ⚙️ Install Dependencies
+## 🔨 Install Dependencies
 
 ### 🕹 Robotic
 
@@ -64,7 +64,7 @@ pip install -r requiremetns.txt
 python demo.py
 ```
 
-### 🌄️ Vision
+### 🌇 Vision
 
 The visual detection is done with [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild), an open-vocabulary detection model. Despite of the simplicity of the vision in our demo, we use [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) with a consideration of better generalization.
 
