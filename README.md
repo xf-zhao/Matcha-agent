@@ -1,22 +1,49 @@
 <div align="center">
 <img src="https://matcha-agent.github.io/img/matcha_background_small.png" style="width:800px;"/>
 
-Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha Agent</b> </a>
-
+Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha Agent</b> </a> 🍵~🤖 
 ![](https://img.shields.io/badge/License-Apache_2.0-green)
 ![](https://img.shields.io/badge/Status-Full_Release-blue)
-![](https://img.shields.io/badge/version-v1.0-blue)
+![https://github.com/xf-zhao/Matcha-agent/releases/tag/v1.0](https://img.shields.io/badge/version-v1.0-blue)
 ![](https://img.shields.io/badge/Paper-Arxiv-blue)
-![](https://img.shields.io/badge/Conference-IROS'23-blue)
+![](https://img.shields.io/badge/Conference-IROS'23-forestgreen)
 
 ---
 </div>
 
 ## 🔔 News
 - $\color{red}{\text{[2023-09-29]}}$ The **full** codes,including the [NICOL](https://arxiv.org/abs/2305.08528) robot URDF and scenes, are released! Codes are re-organised and tested with `Vicuna-13b` model.
-- $\text{[2023-07-01]}$ We open-source codes except the robot's configurations (because the NICOL robot is not publically available at this time). 
+- $\text{[2023-07-01]}$ We open-source codes except the robot's configurations (because the [NICOL](https://arxiv.org/abs/2305.08528) robot is not publically available at this time). 
 
-## Demo
+### Contents
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+- [🎥 Demo Video](#-demo)
+- [⚙️ Install Dependencies](#-install-dependencies)
+   * [🕹 Robotic](#-robotic)
+      + [Install RLBench and NICOL Robot](#install-rlbench-and-nicol-robot)
+      + [Run NICOL demo with RLBench tasks](#run-nicol-demo-with-rlbench-tasks)
+   * [🌄️ Vision](#-vision)
+      + [Install ViLD requirements](#install-vild-requirements)
+      + [Launch Flask server for ViLD](#launch-flask-server-for-vild)
+   * [🔉 Sound](#-sound)
+      + [Install sound module requirements](#install-sound-module-requirements)
+      + [Offline Neural Network Training for Sound Classification. ](#offline-neural-network-training-for-sound-classification)
+      + [Launch sound module as a server](#launch-sound-module-as-a-server)
+   * [🦙 Large Language Models (LLMs) Configuration](#-large-language-models-llms-configuration)
+- [🍵~🤖 Run Matcha-agent](#-run-matcha-agent)
+- [🐞 Error Debuging](#-error-debuging)
+- [🔗 Citation](#-citation)
+
+<!-- TOC end -->
+
+## 🎥 Demo Video
+
+[![Matcha-agent demo](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FrMMeMTWmT0k)](https://youtu.be/rMMeMTWmT0k)
+
+- Matcha agent manipulates objects with different sound, weights and haptics to determine their materials.
+- [NICOL](https://arxiv.org/abs/2305.08528) robot from [Knowledge Technology Group, University of Hamburg](https://www.inf.uni-hamburg.de/en/inst/ab/wtm/about.html).
+- In [CoppeliaSim](https://www.coppeliarobotics.com/) simulator.
+- Please **turn on** your speaker to hear the sound!
 
 ## ⚙️ Install Dependencies
 
