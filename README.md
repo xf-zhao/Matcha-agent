@@ -2,6 +2,7 @@
 <img src="https://matcha-agent.github.io/img/matcha_background_small.png" style="width:800px;"/>
 
 Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha Agent</b> </a> 🍵~🤖 
+
 ![](https://img.shields.io/badge/License-Apache_2.0-green)
 ![](https://img.shields.io/badge/Status-Full_Release-blue)
 ![https://github.com/xf-zhao/Matcha-agent/releases/tag/v1.0](https://img.shields.io/badge/version-v1.0-blue)
