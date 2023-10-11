@@ -16,9 +16,7 @@ Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha 
 - $\color{red}{\text{[2023-09-29]}}$ The **full** codes are released! Codes are re-organised and tested with `Vicuna-13b` model.
 - $\text{[2023-07-01]}$ We open-source codes except the robot's configurations (because the [NICOL](https://arxiv.org/abs/2305.08528) robot is not publically available at this time). 
 
-<!-- including the [NICOL](https://arxiv.org/abs/2305.08528) robot URDF and scenes, -->
 ### Contents
-<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 - [🎥 Demo Video](#-demo-video)
 - [🔨 Install Dependencies](#-install-dependencies)
    * [🕹 Robotic](#-robotic)
@@ -143,9 +141,9 @@ Optional parameters:
     ```
     see also: https://github.com/BVLC/caffe/issues/4953 
 
-## 🖋️ Acknowledgement
+## ⭐ Acknowledgement
 
-The 3D mesh of NICOL robot configurations of the robot can be found in the ~*.ttt~ file. We thank [seed robotics](https://www.seedrobotics.com/) for authorizing us sharing and making the [RH8D hand models](https://www.seedrobotics.com/rh8d-adult-robot-hand) publicly available in this repertory.
+The 3D mesh of NICOL robot configurations of the robot can be found in the `*.ttt` file. We thank [seed robotics](https://www.seedrobotics.com/) for authorizing us sharing and making the [RH8D hand models](https://www.seedrobotics.com/rh8d-adult-robot-hand) publicly available in this repertory.
 
 
 ## 🔗 Citation
