@@ -34,6 +34,7 @@ Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha 
    * [🦙 Large Language Models (LLMs) Configuration](#-large-language-models-llms-configuration)
 - [🍵~🤖 Run Matcha-agent](#-run-matcha-agent)
 - [🐞 Error Debuging](#-error-debuging)
+- [🖋️ Acknowledgement](#-acknowledgement)
 - [🔗 Citation](#-citation)
 
 <!-- TOC end -->
@@ -142,9 +143,9 @@ Optional parameters:
     ```
     see also: https://github.com/BVLC/caffe/issues/4953 
 
-## 🖌️ Acknowledgement
+## 🖋️ Acknowledgement
 
-The 3D mesh of NICOL robot configurations of the robot can be found in the "*.ttt" file. We thank [seed robotics](https://www.seedrobotics.com/) for authorizing us sharing and making the [RH8D hand models](https://www.seedrobotics.com/rh8d-adult-robot-hand) publicly available in this repertory.
+The 3D mesh of NICOL robot configurations of the robot can be found in the ~*.ttt~ file. We thank [seed robotics](https://www.seedrobotics.com/) for authorizing us sharing and making the [RH8D hand models](https://www.seedrobotics.com/rh8d-adult-robot-hand) publicly available in this repertory.
 
 
 ## 🔗 Citation
