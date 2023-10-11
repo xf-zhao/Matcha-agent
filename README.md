@@ -142,6 +142,10 @@ Optional parameters:
     ```
     see also: https://github.com/BVLC/caffe/issues/4953 
 
+## 🖌️ Acknowledgement
+
+The 3D mesh of NICOL robot configurations of the robot can be found in the "*.ttt" file. We thank [seed robotics](https://www.seedrobotics.com/) for authorizing us sharing and making the [RH8D hand models](https://www.seedrobotics.com/rh8d-adult-robot-hand) publicly available in this repertory.
+
 
 ## 🔗 Citation
 ```text
