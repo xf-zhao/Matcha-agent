@@ -27,8 +27,6 @@ import requests
 import json
 
 addr = "YOUR_SERVER_ADDRESS:8848/api/vild"
-# For example, on wtmgws10
-# addr = "http://134.100.10.107:8848/api/vild"
 
 
 # prepare headers for http request
@@ -36,7 +34,7 @@ content_type = "application/json"
 headers = {"content-type": content_type}
 
 data = {
-    "image_path": "/informatik3/wtm/home/zhao/Codes/RLBench/examples/image.jpg",
+    "image_path": "SOMEPATH/image.jpg",
     "category_names": [
         "red block",
         "blood colored block",
