@@ -1,5 +1,3 @@
-# https://github.com/stepjam/PyRep
-# https://github.com/stepjam/RLBench
-pyrep
-rlbench
-gym
+loguru
+gymnasium
+playground
