@@ -1,6 +1,6 @@
 from typing import Dict, Tuple
 from gym import spaces
-from rlbench.gym.rlbench_env import RLBenchEnv
+from rlbench.gym import RLBenchEnv
 from pyrep.const import RenderMode
 from pyrep.objects.dummy import Dummy
 from pyrep.objects.shape import Shape
@@ -10,9 +10,9 @@ from rlbench.action_modes.arm_action_modes import EndEffectorPoseViaPlanning
 from rlbench.observation_config import ObservationConfig, CameraConfig
 import numpy as np
 from loguru import logger
-from NICOL.nicol_base import NicolEnvironment
-from NICOL.nicol_arm import PalmDiscrete
-from NICOL.rlbench_tasks.knocking import Knocking
+from nicol_base import NicolEnvironment
+from nicol_arm import PalmDiscrete
+from rlbench_tasks.knocking import Knocking
 
 
 # Right on top of the wooden box

@@ -11,7 +11,7 @@ from rlbench.sim2real.domain_randomization import RandomizeEvery, \
     VisualRandomizationConfig, DynamicsRandomizationConfig
 from rlbench.sim2real.domain_randomization_scene import DomainRandomizationScene
 from rlbench.environment import Environment
-from NICOL.nicol_arm import NicolRightArm, NicolRightPalm
+from nicol_arm import NicolRightArm, NicolRightPalm
 
 DIR_PATH = dirname(abspath(__file__))
 SUPPORTED_ROBOTS.update({'nicol': (NicolRightArm, NicolRightPalm, 8),})
