@@ -13,7 +13,8 @@ Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha 
 </div>
 
 ## 🔔 News
-- $\color{red}{\text{[2023-09-29]}}$ The **full** codes are released! Codes are re-organised and tested with `Vicuna-13b` model.
+- $\color{red}{\text{[2024-08-25]}}$ We provide a docker image with proper CoppeliaSim (v4.4) to run the code.
+- $\text{[2023-09-29]}$ The **full** codes are released! Codes are re-organised and tested with `Vicuna-13b` model.
 - $\text{[2023-07-01]}$ We open-source codes except the robot's configurations (because the [NICOL](https://arxiv.org/abs/2305.08528) robot is not publically available at this time). 
 
 ### Contents
@@ -43,7 +44,7 @@ Official Implementation of <a href="https://matcha-agent.github.io/"> <b>Matcha 
 
 - Matcha agent manipulates objects with different sound, weights and haptics to determine their materials.
 - [NICOL](https://arxiv.org/abs/2305.08528) robot from [Knowledge Technology Group, University of Hamburg](https://www.inf.uni-hamburg.de/en/inst/ab/wtm/about.html).
-- In [CoppeliaSim](https://www.coppeliarobotics.com/) simulator.
+- In [CoppeliaSim](https://www.coppeliarobotics.com/) simulator, must be v4.4! (We provide this version since the coppeliasim official website won't provide this anymore).
 - Please **turn on** your speaker to hear the sound!
 
 ## 🔨 Install Dependencies
@@ -56,8 +57,9 @@ The experimental task is designed on top of [RLBench](https://github.com/stepjam
 
 ```bash
 git clone git@github.com:xf-zhao/Matcha-agent.git
-cd NICOL
-pip install -r requiremetns.txt
+docker build --progress=plain -t matcha-agent:latest .
+docker container run -it --privileged --gpus all --net=host --entrypoint="" -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY matcha-agent /bin/bash
+python3 NICOL/demo.py
 ```
 
 #### Run NICOL demo with [RLBench](https://github.com/stepjam/RLBench) tasks
@@ -71,7 +73,7 @@ The visual detection is done with [ViLD](https://github.com/tensorflow/tpu/tree/
 
 #### Install [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) requirements
 
-Since the library dependencies of [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) may highly conflict with other packages installed, we encourage to install [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) model within an separated environment and launch it as a `http` server.
+Since the library dependencies of [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) may highly conflict with other packages installed, we encourage to install [ViLD](https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild) model within a separated environment and launch it as a `http` server.
 
 ```bash
 conda create -n vild python=3.9
