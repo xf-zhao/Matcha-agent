@@ -57,14 +57,17 @@ The experimental task is designed on top of [RLBench](https://github.com/stepjam
 
 ```bash
 git clone git@github.com:xf-zhao/Matcha-agent.git
+# option 1: manually install coppeliasim v4.4 and
+cd Matcha-agent && pip install -r NICOL/requirements.txt
+
+# option 2: inside docker
 docker build --progress=plain -t matcha-agent:latest .
 docker container run -it --privileged --gpus all --net=host --entrypoint="" -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY matcha-agent /bin/bash
-python3 NICOL/demo.py
 ```
 
 #### Run NICOL demo with [RLBench](https://github.com/stepjam/RLBench) tasks
 ```bash
-python demo.py
+python3 NICOL/demo.py
 ```
 
 ### 🌇 Vision
